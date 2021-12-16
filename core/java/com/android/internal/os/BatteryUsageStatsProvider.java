@@ -204,12 +204,7 @@ public class BatteryUsageStatsProvider {
                 tags.add(tag);
             }
 
-            final File systemDir =
-                    batteryStatsImpl.mBatteryStatsHistory.getHistoryDirectory().getParentFile();
-            final BatteryStatsHistory batteryStatsHistory =
-                    new BatteryStatsHistory(batteryStatsImpl, systemDir, historyBuffer);
-
-            batteryUsageStatsBuilder.setBatteryHistory(historyBuffer, tags, batteryStatsHistory);
+            batteryUsageStatsBuilder.setBatteryHistory(historyBuffer, tags);
         }
 
         return batteryUsageStatsBuilder.build();
