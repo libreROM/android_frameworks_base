@@ -2949,6 +2949,8 @@ public final class SystemServer implements Dumpable {
                 setIncrementalServiceSystemReady(mIncrementalServiceHandle);
                 t.traceEnd();
             }
+
+            com.android.server.ext.SystemServerExt.init(mSystemContext, mPackageManagerService);
         }, t);
 
         t.traceBegin("StartSystemUI");
